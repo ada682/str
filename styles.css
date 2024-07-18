@@ -2,67 +2,87 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    background: #0a0a0a;
+    color: #fff;
     position: relative;
-    background: url('https://imgsrv2.voi.id/DvSiQiliRRkcyclSd3lr8pKTAlUsMfy__utrcyZZuls/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy80MTc5MS8yMDIxMDMzMTE0MTAtbWFpbi5qcGc.jpg') no-repeat center center fixed;
-    background-size: cover;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    background-color: #111;
     padding: 10px 0;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 18px;
 }
 
 section {
-    padding: 20px;
-    color: #fff;
+    padding: 100px 20px;
+}
+
+#home {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 10px;
+    margin: 100px 0;
+}
+
+#products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .product {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
-    text-align: center;
+    border: 1px solid #333;
+    padding: 20px;
+    margin: 20px;
     background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .product img {
     width: 100%;
-    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
 }
 
-#payment-options {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: rgba(0, 0, 0, 0.7);
+.product:hover {
+    transform: scale(1.05);
 }
 
-footer {
+#checkout {
     background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    margin: 100px 0;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+}
+
+#shipping-info {
+    margin-top: 20px;
 }
 
 #background {
@@ -73,23 +93,28 @@ footer {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    background: url('https://noypigeeks.gumlet.io/wp-content/uploads/2022/05/Starlink-Satellites-Philippines-NoypiGeeks.jpg?compress=true&quality=80&w=376&dpr=2.6') no-repeat bottom right;
+    background-size: contain;
+    opacity: 0.3;
 }
 
-.satellite-dot {
+.hexagon {
     position: absolute;
-    width: 5px;
-    height: 5px;
-    background: #fff;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: move 5s linear infinite;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: transform 0.5s ease-out;
 }
 
-@keyframes move {
+@keyframes float {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
     }
     100% {
-        transform: translateY(100vh);
+        transform: translateY(0) rotate(360deg);
     }
 }
