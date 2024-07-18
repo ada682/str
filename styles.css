@@ -73,7 +73,7 @@ section {
     transform: scale(1.05);
 }
 
-#checkout {
+#cart {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 50px;
     border-radius: 10px;
@@ -81,7 +81,7 @@ section {
     text-align: center;
 }
 
-#shipping-info {
+#checkout-info {
     margin-top: 20px;
 }
 
@@ -93,8 +93,8 @@ section {
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    background: url('https://noypigeeks.gumlet.io/wp-content/uploads/2022/05/Starlink-Satellites-Philippines-NoypiGeeks.jpg?compress=true&quality=80&w=376&dpr=2.6') no-repeat bottom right;
-    background-size: contain;
+    background: url('https://i.pinimg.com/736x/8b/8a/5f/8b8a5fbc827ab12998bc3df91bd97734.jpg') no-repeat center center;
+    background-size: cover;
     opacity: 0.3;
 }
 
