@@ -34,57 +34,34 @@ function addToCart(productName, price) {
         duration: 1000,
         easing: 'ease-in-out',
         fill: 'forwards'
-    });
-
-    // Remove the animation element after the animation is complete
-    setTimeout(() => {
-        document.body.removeChild(cartAnimation);
-    }, 1000);
-
-    console.log(`Added ${productName} to cart for $${price}`);
+    }).onfinish = () => {
+        // Remove the animation element after animation is done
+        cartAnimation.remove();
+    };
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Load cart items from localStorage
-    const storedCart = JSON.parse(localStorage.getItem('cart'));
-    if (storedCart) {
-        cart = storedCart;
-        updateCartDisplay();
-    }
-
-    // Add event listener to checkout button
-    const checkoutButton = document.getElementById('checkout-button');
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', function() {
-            window.location.href = 'checkout.html';
-        });
-    }
-
-    // Add event listener to live chat
-    document.getElementById('live-chat').addEventListener('click', function() {
-        alert('Live chat clicked!');
-    });
-
-    // Add event listener to checkout form
-    const checkoutForm = document.getElementById('checkout-form');
-    if (checkoutForm) {
-        checkoutForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Order placed successfully!');
-            localStorage.removeItem('cart');
-            window.location.href = 'products.html';
+// Populate cart items on cart.html
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('cart-items')) {
+        cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItems = document.getElementById('cart-items');
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+            cartItems.appendChild(li);
         });
     }
 });
 
-function updateCartDisplay() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    if (cartItemsContainer) {
-        cartItemsContainer.innerHTML = '';
-        cart.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${item.name} - $${item.price}`;
-            cartItemsContainer.appendChild(listItem);
-        });
-    }
-}
+// Handle checkout
+document.getElementById('checkout-button')?.addEventListener('click', () => {
+    window.location.href = 'checkout.html';
+});
+
+document.getElementById('checkout-form')?.addEventListener('submit', event => {
+    event.preventDefault();
+    // Handle form submission
+    alert('Order placed successfully!');
+    localStorage.removeItem('cart');
+    window.location.href = 'index.html';
+});
