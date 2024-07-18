@@ -1,0 +1,13 @@
+title: My Awesome Site
+description: >- # this means to ignore newlines until "baseurl:"
+  Welcome to my awesome site.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://ada682.github.io" # the base hostname & protocol for your site
+github_repo: /ada682/str # your GitHub username and repository name
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
