@@ -6,25 +6,30 @@ function addToCart(product, price) {
 }
 
 function displayCart() {
-    const cartDiv = document.getElementById('cart');
+    const cartDiv = document.getElementById('cart-items');
     cartDiv.innerHTML = '';
     cart.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.textContent = `${item.product} - $${item.price.toFixed(2)}`;
         cartDiv.appendChild(itemDiv);
     });
+
+    const checkoutInfo = document.getElementById('checkout-info');
+    if (cart.length > 0) {
+        checkoutInfo.style.display = 'block';
+    } else {
+        checkoutInfo.style.display = 'none';
+    }
 }
 
 function submitForm(event) {
     event.preventDefault();
     
-    // Collect form data
-    const formData = new FormData(document.getElementById('checkout-form'));
+    const formData = new FormData(document.getElementById('shipping-form'));
     const shippingOption = formData.get('shipping-option');
     const shippingCost = shippingOption === 'standard' ? 15 : 30;
     const totalPrice = cart.reduce((total, item) => total + item.price, 0) + shippingCost;
 
-    // Display payment summary
     const paymentSummary = document.getElementById('payment-summary');
     paymentSummary.innerHTML = `
         <h3>Order Summary</h3>
@@ -33,20 +38,37 @@ function submitForm(event) {
         </ul>
         <p>Shipping: ${shippingOption} - $${shippingCost.toFixed(2)}</p>
         <h4>Total: $${totalPrice.toFixed(2)}</h4>
-        <button onclick="processPayment()">Proceed to Payment</button>
+        <button onclick="completePurchase()">Complete Purchase</button>
     `;
 }
 
-function processPayment() {
-    alert('Redirecting to payment gateway...');
-    // Implement payment processing logic here
+function completePurchase() {
+    alert('Thank you for your purchase!');
+    cart = [];
+    displayCart();
+    document.getElementById('shipping-form').reset();
+    document.getElementById('checkout-info').style.display = 'none';
+    document.getElementById('payment-summary').innerHTML = '';
 }
 
-document.addEventListener('mousemove', (e) => {
-    document.querySelectorAll('.hexagon').forEach(hexagon => {
-        const speed = 0.05;
+// Dynamic background hexagons movement
+document.addEventListener('mousemove', e => {
+    document.querySelectorAll('.hexagon').forEach(hex => {
+        const speed = hex.getAttribute('data-speed');
         const x = (window.innerWidth - e.pageX * speed) / 100;
         const y = (window.innerHeight - e.pageY * speed) / 100;
-        hexagon.style.transform = `translate(${x}px, ${y}px)`;
+        hex.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
 });
+
+// Create and position hexagons
+const backgroundDiv = document.getElementById('background');
+for (let i = 0; i < 20; i++) {
+    const hex = document.createElement('div');
+    hex.className = 'hexagon';
+    hex.style.left = `${Math.random() * 100}vw`;
+    hex.style.top = `${Math.random() * 100}vh`;
+    hex.setAttribute('data-speed', Math.random() * 2 + 1);
+    backgroundDiv.appendChild(hex);
+    hex.style.animation = `float ${Math.random() * 10 + 5}s ease-in-out infinite`;
+}
