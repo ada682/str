@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlink Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Starlink Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Starlink Store</h2>
+        <p>Your reliable source for Starlink satellite internet products.</p>
+    </section>
+
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product">
+            <h3>Starlink Satellite Antenna</h3>
+            <img src="antenna.jpg" alt="Starlink Satellite Antenna">
+            <p>Price: $499.00</p>
+            <button onclick="showPaymentOptions()">Buy Now</button>
+            <div id="payment-options" style="display:none;">
+                <h4>Pay with Cryptocurrency</h4>
+                <div>
+                    <p>USDT (BEP20):</p>
+                    <p>Address: <strong>0xD52D6Ee4dBAc21D3Dc49f05784dd48B7f69FEBB1</strong></p>
+                </div>
+                <div>
+                    <p>BTC:</p>
+                    <p>Address: <strong>3M7GUETHXngRyere1VqgYtNoo9eTfkcxKN</strong></p>
+                </div>
+                <div>
+                    <p>TON:</p>
+                    <p>Address: <strong>EQBlnb9GCDGnJ5XEqamHL7Sj5_0wJ4MGja5T6PKlwVAISgrW</strong></p>
+                    <p>Memo: <strong>4633513</strong></p>
+                </div>
+            </div>
+        </div>
+        <!-- Tambahkan produk lainnya di sini -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+        <p>Here you can find answers to common questions about Starlink products.</p>
+        <!-- Tambahkan pertanyaan dan jawaban lainnya di sini -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Starlink Store. All rights reserved.</p>
+    </footer>
+
+    <div id="background">
+        <!-- Titik-titik satelit akan ditambahkan di sini -->
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
