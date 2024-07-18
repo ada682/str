@@ -12,7 +12,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="cart.html" id="cart-link">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -22,23 +22,23 @@
         <div class="product">
             <h3>Starlink Satellite Antenna</h3>
             <img src="https://api.starlink.com/public-files/roam_a_hero_m.jpg" alt="Starlink Satellite Antenna">
-            <p>Price: $449.00</p>
+            <p>Price: $499.00</p>
             <p>The Starlink Satellite Antenna provides high-speed, low-latency broadband internet across the globe. It's perfect for users in remote areas with unreliable internet access.</p>
-            <button class="add-to-cart" onclick="addToCart('Starlink Satellite Antenna', 499)"></button>
+            <button class="add-to-cart" onclick="addToCart('Starlink Satellite Antenna', 499)">Add to Cart</button>
         </div>
         <div class="product">
             <h3>Starlink Router</h3>
             <img src="https://www.homeowner.com/wp-content/uploads/2024/06/Starlink-Mesh-Router-Review-1024x578.png" alt="Starlink Router">
-            <p>Price: $149.00</p>
+            <p>Price: $199.00</p>
             <p>The Starlink Router offers seamless connectivity with the Starlink Satellite Antenna. It ensures stable and fast Wi-Fi coverage throughout your home or office.</p>
-            <button class="add-to-cart" onclick="addToCart('Starlink Router', 199)"></button>
+            <button class="add-to-cart" onclick="addToCart('Starlink Router', 199)">Add to Cart</button>
         </div>
         <div class="product">
             <h3>Starlink Antenna and Router Package</h3>
             <img src="https://i0.wp.com/driveteslacanada.ca/wp-content/uploads/2021/11/spacex-starlink-dish.jpg?resize=998%2C665&ssl=1" alt="Starlink Antenna and Router Package">
-            <p>Price: $599.00</p>
+            <p>Price: $649.00</p>
             <p>This package includes both the Starlink Satellite Antenna and Router, providing everything you need for a complete high-speed internet setup. Ideal for homes and businesses.</p>
-            <button class="add-to-cart" onclick="addToCart('Starlink Antenna and Router Package', 649)"></button>
+            <button class="add-to-cart" onclick="addToCart('Starlink Antenna and Router Package', 649)">Add to Cart</button>
         </div>
     </section>
 
@@ -47,6 +47,10 @@
         <div class="triangle"></div>
         <div class="triangle"></div>
         <!-- Add more triangles as needed -->
+    </div>
+
+    <div id="live-chat">
+        <img src="logo_starlink.png" alt="Live Chat">
     </div>
 
     <script src="scripts.js"></script>
