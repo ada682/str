@@ -1,161 +1,59 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 0;
+/* Add your existing CSS here */
+
+/* Live chat styling */
+#live-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #000;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
+#live-chat img {
+    width: 40px;
+    height: 40px;
 }
 
 .product {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 20px 0;
-    padding: 20px;
-    text-align: center;
-}
-
-.product img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    position: relative;
 }
 
 .add-to-cart {
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Shopping_cart_icon.svg/1024px-Shopping_cart_icon.svg.png') no-repeat center;
-    background-size: contain;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 0;
-    height: 40px;
-    margin-top: 10px;
-    padding: 0;
-    width: 40px;
-}
-
-#cart-items {
-    margin: 20px 0;
-}
-
-.cart-item {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    display: block;
     margin: 10px 0;
-    padding: 10px;
-}
-
-.cart-item button {
-    background: #d9534f;
-    border: none;
+    padding: 10px 20px;
+    background-color: #000;
     color: #fff;
+    border: none;
     cursor: pointer;
-    padding: 5px 10px;
+    transition: background-color 0.3s;
 }
 
-#checkout-info {
+.add-to-cart:hover {
+    background-color: #444;
+}
+
+/* Animation for the cart */
+#cart-animation {
+    position: fixed;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
     display: none;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-#payment-summary {
-    margin-top: 20px;
-}
-
-#background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 20px solid #ffcc00;
-    opacity: 0.7;
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
-
-.cart-animation {
-    position: absolute;
+#cart-animation img {
     width: 30px;
     height: 30px;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Shopping_cart_icon.svg/1024px-Shopping_cart_icon.svg.png') no-repeat center;
-    background-size: contain;
-    z-index: 1000;
-}
-
-#video-container {
-    text-align: center;
-}
-
-#satellite-animation {
-    width: 100%;
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-    background: transparent;
-    z-index: -1;
-}
-
-.satellite {
-    width: 20px;
-    height: 20px;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/SpaceX_Dragon_2.png/800px-SpaceX_Dragon_2.png') no-repeat center;
-    background-size: contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    animation: satellite-move 10s linear infinite;
-}
-
-@keyframes satellite-move {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
 }
