@@ -12,7 +12,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="#checkout">Checkout</a></li>
+                <li><a href="#cart">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -44,14 +44,14 @@
         </div>
     </section>
 
-    <section id="checkout">
-        <h2>Checkout</h2>
-        <div id="cart">
+    <section id="cart">
+        <h2>Cart</h2>
+        <div id="cart-items">
             <!-- Items in the cart will be displayed here -->
         </div>
-        <div id="shipping-info">
+        <div id="checkout-info" style="display: none;">
             <h3>Shipping Information</h3>
-            <form id="shipping-form">
+            <form id="shipping-form" onsubmit="submitForm(event)">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -70,20 +70,23 @@
                 <label for="country">Country:</label>
                 <input type="text" id="country" name="country" required>
                 
-                <button type="button" onclick="calculateShipping()">Calculate Shipping</button>
+                <label for="shipping-option">Shipping Option:</label>
+                <select id="shipping-option" name="shipping-option" required>
+                    <option value="standard">Standard - $15.00</option>
+                    <option value="express">Express - $30.00</option>
+                </select>
+                
+                <button type="submit">Calculate Total</button>
             </form>
+            <div id="payment-summary"></div>
         </div>
-        <div id="shipping-cost" style="display: none;">
-            <h3>Shipping Cost</h3>
-            <p id="shipping-cost-amount"></p>
-            <h3>Total Cost</h3>
-            <p id="total-cost-amount"></p>
-        </div>
-        <button onclick="proceedToPayment()">Proceed to Payment</button>
     </section>
 
     <div id="background">
-        <!-- Titik-titik satelit akan ditambahkan di sini -->
+        <div class="hexagon"></div>
+        <div class="hexagon"></div>
+        <div class="hexagon"></div>
+        <!-- Add more hexagons as needed -->
     </div>
 
     <script src="scripts.js"></script>
