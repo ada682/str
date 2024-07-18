@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Starlink Store - Cart</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,39 +16,16 @@
             </ul>
         </nav>
     </header>
-
-    <section id="checkout">
-        <h2>Checkout</h2>
-        <form id="checkout-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
-
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" required>
-
-            <label for="state">State:</label>
-            <input type="text" id="state" name="state" required>
-
-            <label for="zip">Zip Code:</label>
-            <input type="text" id="zip" name="zip" required>
-
-            <label for="country">Country:</label>
-            <input type="text" id="country" name="country" required>
-
-            <label for="card">Credit Card Number:</label>
-            <input type="text" id="card" name="card" required>
-
-            <button type="submit">Place Order</button>
-        </form>
-    </section>
-
+    <main>
+        <h1>Shopping Cart</h1>
+        <ul id="cart-items">
+            <!-- Items will be dynamically added here -->
+        </ul>
+        <button id="checkout-button">Checkout</button>
+    </main>
     <div id="live-chat">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Starlink_Logo.svg/1200px-Starlink_Logo.svg.png" alt="Live Chat">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/SpaceX_Starlink_logo.svg/2560px-SpaceX_Starlink_logo.svg.png" alt="Live Chat" style="width: 50px; height: 50px;">
     </div>
-
     <script src="scripts.js"></script>
 </body>
 </html>
