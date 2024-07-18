@@ -98,3 +98,19 @@ nav ul li a {
 .dropdown:hover .dropdown-content-right {
     display: block;
 }
+
+.add-to-cart {
+    position: relative;
+}
+
+.cart-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
