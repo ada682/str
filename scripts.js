@@ -32,12 +32,10 @@ function submitForm(event) {
 
     const paymentSummary = document.getElementById('payment-summary');
     paymentSummary.innerHTML = `
-        <h3>Order Summary</h3>
-        <ul>
-            ${cart.map(item => `<li>${item.product} - $${item.price.toFixed(2)}</li>`).join('')}
-        </ul>
-        <p>Shipping: ${shippingOption} - $${shippingCost.toFixed(2)}</p>
-        <h4>Total: $${totalPrice.toFixed(2)}</h4>
+        <h4>Payment Summary</h4>
+        <p>Subtotal: $${cart.reduce((total, item) => total + item.price, 0).toFixed(2)}</p>
+        <p>Shipping: $${shippingCost.toFixed(2)}</p>
+        <p>Total: $${totalPrice.toFixed(2)}</p>
         <button onclick="completePurchase()">Complete Purchase</button>
     `;
 }
