@@ -11,15 +11,29 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
+                <li class="dropdown">
+                    <a href="products.html" class="dropbtn">Products</a>
+                    <div class="dropdown-content">
+                        <a href="food.html">Food & Drinks</a>
+                        <div class="dropdown">
+                            <a href="cakes.html" class="dropbtn">Cakes</a>
+                            <div class="dropdown-content-right">
+                                <a href="wet_cakes.html">Wet Cakes</a>
+                                <a href="dry_cakes.html">Dry Cakes</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="cart.html">Cart</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
-        <h1>Welcome to Starlink Store</h1>
-        <p>Explore the latest Starlink satellite internet products.</p>
+        <div id="welcome-container">
+            <h1>Welcome to Starlink Store</h1>
+            <p>Explore the latest Starlink satellite internet products.</p>
+        </div>
         <div id="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/PO7IqVb1jeU?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
@@ -27,10 +41,7 @@
     </section>
 
     <div id="background">
-        <div class="triangle"></div>
-        <div class="triangle"></div>
-        <div class="triangle"></div>
-        <!-- Add more triangles as needed -->
+        <!-- Background emojis will be here -->
     </div>
 
     <script src="scripts.js"></script>
