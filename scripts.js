@@ -76,26 +76,28 @@ function completePurchase() {
     document.getElementById('payment-summary').innerHTML = '';
 }
 
-// Dynamic background triangles movement
+// Dynamic background emojis movement
 document.addEventListener('mousemove', e => {
-    document.querySelectorAll('.triangle').forEach(triangle => {
-        const speed = triangle.getAttribute('data-speed');
+    document.querySelectorAll('.emoji').forEach(emoji => {
+        const speed = emoji.getAttribute('data-speed');
         const x = (window.innerWidth - e.pageX * speed) / 100;
         const y = (window.innerHeight - e.pageY * speed) / 100;
-        triangle.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        emoji.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
 });
 
-// Create and position triangles
+// Create and position emojis
 const backgroundDiv = document.getElementById('background');
+const emojis = ['🍲', '🍰', '🍹', '🥤', '🍩', '🍪']; // Add more emojis as needed
 for (let i = 0; i < 20; i++) {
-    const triangle = document.createElement('div');
-    triangle.className = 'triangle';
-    triangle.style.left = `${Math.random() * 100}vw`;
-    triangle.style.top = `${Math.random() * 100}vh`;
-    triangle.setAttribute('data-speed', Math.random() * 2 + 1);
-    backgroundDiv.appendChild(triangle);
-    triangle.style.animation = `float ${Math.random() * 10 + 5}s ease-in-out infinite`;
+    const emoji = document.createElement('div');
+    emoji.className = 'emoji';
+    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = `${Math.random() * 100}vw`;
+    emoji.style.top = `${Math.random() * 100}vh`;
+    emoji.setAttribute('data-speed', Math.random() * 2 + 1);
+    backgroundDiv.appendChild(emoji);
+    emoji.style.animation = `float ${Math.random() * 10 + 5}s ease-in-out infinite`;
 }
 
 if (window.location.pathname.endsWith('cart.html')) {
