@@ -6,7 +6,5 @@
   "scripts": {
     "build": "jekyll build"
   },
-  "dependencies": {
-    "your-node-dependency": "^1.0.0"
-  }
+  "dependencies": {}
 }
