@@ -11,16 +11,47 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
+                <li><a href="food.html">Food & Drinks</a></li>
+                <li><a href="dry_cakes.html">Dry Cakes</a></li>
+                <li><a href="wet_cakes.html">Wet Cakes</a></li>
                 <li><a href="cart.html">Cart</a></li>
             </ul>
         </nav>
+        <div class="profile-icon" onclick="toggleProfilePopup()">
+            <img src="img/profile-icon.png" alt="Profile" width="40" height="40">
+            <div class="profile-popup" id="profile-popup">
+                <div id="profile-content">
+                    <p>Name: John Doe</p>
+                    <p>Phone: 123-456-7890</p>
+                    <button onclick="logout()">Logout</button>
+                </div>
+                <div id="login-content" style="display: none;">
+                    <button onclick="showLoginPopup()">Login</button>
+                </div>
+            </div>
+        </div>
     </header>
-    <section id="products">
-        <h2>Dry Cakes</h2>
-        <!-- Content for Dry Cakes -->
-    </section>
-    <div id="background"></div>
+    <main>
+        <h1>Dry Cakes</h1>
+        <div class="product-grid">
+            <!-- Contoh Produk -->
+            <div class="product-card">
+                <img src="img/drycake1.jpg" alt="Dry Cake 1">
+                <h2>Dry Cake 1</h2>
+                <p>$15.00</p>
+                <input type="number" value="1" min="1" class="quantity">
+                <button class="add-to-cart" onclick="addToCart('Dry Cake 1', 15)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="img/drycake2.jpg" alt="Dry Cake 2">
+                <h2>Dry Cake 2</h2>
+                <p>$18.00</p>
+                <input type="number" value="1" min="1" class="quantity">
+                <button class="add-to-cart" onclick="addToCart('Dry Cake 2', 18)">Add to Cart</button>
+            </div>
+            <!-- Tambahkan lebih banyak produk sesuai kebutuhan -->
+        </div>
+    </main>
     <script src="scripts.js"></script>
 </body>
 </html>
