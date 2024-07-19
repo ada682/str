@@ -4,3 +4,6 @@ gem "jekyll", "~> 4.2.2"
 gem "minima", "~> 2.5"
 gem "jekyll-feed", "~> 0.12"
 gem "jekyll-sitemap", "~> 1.4"
+gem "csv"          # Add this line
+gem "base64"       # Add this line
+gem "bigdecimal"   # Add this line
