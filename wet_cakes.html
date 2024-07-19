@@ -11,43 +11,47 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
+                <li><a href="food.html">Food & Drinks</a></li>
+                <li><a href="dry_cakes.html">Dry Cakes</a></li>
+                <li><a href="wet_cakes.html">Wet Cakes</a></li>
                 <li><a href="cart.html">Cart</a></li>
             </ul>
         </nav>
+        <div class="profile-icon" onclick="toggleProfilePopup()">
+            <img src="img/profile-icon.png" alt="Profile" width="40" height="40">
+            <div class="profile-popup" id="profile-popup">
+                <div id="profile-content">
+                    <p>Name: John Doe</p>
+                    <p>Phone: 123-456-7890</p>
+                    <button onclick="logout()">Logout</button>
+                </div>
+                <div id="login-content" style="display: none;">
+                    <button onclick="showLoginPopup()">Login</button>
+                </div>
+            </div>
+        </div>
     </header>
-
-    <section id="products">
-        <h2>Wet Cakes</h2>
-        <div class="product">
-            <h3>Chocolate Truffle Cake</h3>
-            <img src="path/to/chocolate_truffle.jpg" alt="Chocolate Truffle Cake">
-            <p>Price: $20.00</p>
-            <p>Rich and moist chocolate cake with layers of smooth chocolate truffle.</p>
-            <button class="add-to-cart" onclick="addToCart('Chocolate Truffle Cake', 20)">Add to Cart</button>
+    <main>
+        <h1>Wet Cakes</h1>
+        <div class="product-grid">
+            <!-- Contoh Produk -->
+            <div class="product-card">
+                <img src="img/wetcake1.jpg" alt="Wet Cake 1">
+                <h2>Wet Cake 1</h2>
+                <p>$20.00</p>
+                <input type="number" value="1" min="1" class="quantity">
+                <button class="add-to-cart" onclick="addToCart('Wet Cake 1', 20)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="img/wetcake2.jpg" alt="Wet Cake 2">
+                <h2>Wet Cake 2</h2>
+                <p>$22.00</p>
+                <input type="number" value="1" min="1" class="quantity">
+                <button class="add-to-cart" onclick="addToCart('Wet Cake 2', 22)">Add to Cart</button>
+            </div>
+            <!-- Tambahkan lebih banyak produk sesuai kebutuhan -->
         </div>
-        <div class="product">
-            <h3>Tiramisu</h3>
-            <img src="path/to/tiramisu.jpg" alt="Tiramisu">
-            <p>Price: $25.00</p>
-            <p>A classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese.</p>
-            <button class="add-to-cart" onclick="addToCart('Tiramisu', 25)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <h3>Red Velvet Cake</h3>
-            <img src="path/to/red_velvet.jpg" alt="Red Velvet Cake">
-            <p>Price: $22.00</p>
-            <p>Moist red velvet cake with a hint of cocoa, layered with creamy cream cheese frosting.</p>
-            <button class="add-to-cart" onclick="addToCart('Red Velvet Cake', 22)">Add to Cart</button>
-        </div>
-    </section>
-
-    <div id="background">
-        <div class="triangle"></div>
-        <div class="triangle"></div>
-        <div class="triangle"></div>
-    </div>
-
+    </main>
     <script src="scripts.js"></script>
 </body>
 </html>
