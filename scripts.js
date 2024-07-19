@@ -1,3 +1,50 @@
+let isLoggedIn = false;
+
+function toggleProfilePopup() {
+    const profilePopup = document.getElementById('profile-popup');
+    const profileContent = document.getElementById('profile-content');
+    const loginContent = document.getElementById('login-content');
+    
+    profilePopup.style.display = profilePopup.style.display === 'block' ? 'none' : 'block';
+
+    if (isLoggedIn) {
+        profileContent.style.display = 'block';
+        loginContent.style.display = 'none';
+    } else {
+        profileContent.style.display = 'none';
+        loginContent.style.display = 'block';
+    }
+}
+
+function showLoginPopup() {
+    const loginPopup = document.getElementById('login-popup');
+    loginPopup.style.display = 'block';
+}
+
+function closeLoginPopup() {
+    const loginPopup = document.getElementById('login-popup');
+    loginPopup.style.display = 'none';
+}
+
+function loginWithGoogle() {
+    // Implementasi login dengan Google
+    isLoggedIn = true;
+    closeLoginPopup();
+    toggleProfilePopup();
+}
+
+function loginWithFacebook() {
+    // Implementasi login dengan Facebook
+    isLoggedIn = true;
+    closeLoginPopup();
+    toggleProfilePopup();
+}
+
+function logout() {
+    isLoggedIn = false;
+    toggleProfilePopup();
+}
+
 function addToCart(productName, productPrice) {
     const quantityInput = event.target.previousElementSibling;
     const quantity = parseInt(quantityInput.value);
@@ -30,6 +77,16 @@ function addToCart(productName, productPrice) {
         // Tambahkan produk ke keranjang (implementasi sesuai kebutuhan)
         alert(`${quantity} x ${productName} added to cart`);
     });
+}
+
+function showLoginPrompt() {
+    if (!isLoggedIn) {
+        const loginPopup = document.getElementById('login-popup');
+        loginPopup.style.display = 'block';
+    } else {
+        // Lanjutkan ke pembayaran
+        alert('Proceed to checkout');
+    }
 }
 
 // Fungsi untuk menangani popup video
