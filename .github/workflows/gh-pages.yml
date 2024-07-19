@@ -3,7 +3,7 @@ name: pages build and deployment
 on:
   push:
     branches:
-      - main # or the branch you want to use
+      - main
 
 jobs:
   build:
@@ -13,10 +13,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # or '20'
+
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: '3.0'  # Specify a correct and available Ruby version
         bundler-cache: true
 
     - name: Install dependencies
