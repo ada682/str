@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlink Store - Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product">
+            <h3>Starlink Satellite Antenna</h3>
+            <img src="https://api.starlink.com/public-files/roam_a_hero_m.jpg" alt="Starlink Satellite Antenna">
+            <p>Price: $499.00</p>
+            <p>The Starlink Satellite Antenna provides high-speed, low-latency broadband internet across the globe. It's perfect for users in remote areas with unreliable internet access.</p>
+            <button class="add-to-cart" onclick="addToCart('Starlink Satellite Antenna', 499)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h3>Starlink Router</h3>
+            <img src="https://www.homeowner.com/wp-content/uploads/2024/06/Starlink-Mesh-Router-Review-1024x578.png" alt="Starlink Router">
+            <p>Price: $199.00</p>
+            <p>The Starlink Router offers seamless connectivity with the Starlink Satellite Antenna. It ensures stable and fast Wi-Fi coverage throughout your home or office.</p>
+            <button class="add-to-cart" onclick="addToCart('Starlink Router', 199)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h3>Starlink Mesh Node</h3>
+            <img src="https://cdn1.shopify.com/s/files/1/0574/8850/7373/products/Starlink_Standard_Kit_7aa13504-7fd6-4aaf-bfd6-7d82b58245f2.png?v=1678664236" alt="Starlink Mesh Node">
+            <p>Price: $129.00</p>
+            <p>Extend your Starlink network with the Mesh Node. It provides additional Wi-Fi coverage and ensures strong signal in every corner of your home or office.</p>
+            <button class="add-to-cart" onclick="addToCart('Starlink Mesh Node', 129)">Add to Cart</button>
+        </div>
+    </section>
+
+    <div id="background">
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
